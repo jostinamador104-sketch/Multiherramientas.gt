@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>MULTIHERRAMIENTA.GT | Catálogo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <header class="max-w-6xl mx-auto mb-8">
+        <h1 class="text-4xl font-bold text-blue-900">MULTIHERRAMIENTA.GT</h1>
+        <input type="text" id="searchInput" onkeyup="searchTools()" placeholder="🔍 Buscar herramienta..." class="w-full p-4 mt-4 rounded-lg border">
+    </header>
+
+    <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <!-- Producto 1 -->
+        <div class="product-card bg-white p-4 rounded-xl shadow-lg border">
+            <img src="https://i.postimg.cc/28G36QBp/1783709396751.png" class="w-full h-40 object-cover rounded">
+            <h2 class="text-lg font-bold mt-2">Bomba de agua 4x4</h2>
+            <p class="text-sm text-gray-600">Tekama engines</p>
+            <p class="text-xs mt-2 text-gray-500">Tipo de bomba centrífuga... 80 m altura máxima, motor 15 HP.</p>
+            <p class="text-blue-900 font-bold mt-2">Q9,500</p>
+            <a href="https://wa.me/50251816228?text=Hola, me interesa la Bomba de agua 4x4" class="block bg-green-600 text-white text-center py-2 mt-3 rounded">Pedir por WhatsApp</a>
+        </div>
+        <!-- Producto 2 -->
+        <div class="product-card bg-white p-4 rounded-xl shadow-lg border">
+            <img src="https://i.postimg.cc/zX73BCHx/1783709389545.png" class="w-full h-40 object-cover rounded">
+            <h2 class="text-lg font-bold mt-2">Desgranadora de maíz</h2>
+            <p class="text-sm text-gray-600">Tudor</p>
+            <p class="text-xs mt-2 text-gray-500">Motor eléctrico 1.5 HP, capacidad 4 quintales/hora.</p>
+            <p class="text-blue-900 font-bold mt-2">Q2,100</p>
+            <a href="https://wa.me/50251816228?text=Hola, me interesa la Desgranadora" class="block bg-green-600 text-white text-center py-2 mt-3 rounded">Pedir por WhatsApp</a>
+        </div>
+        <!-- Producto 3 -->
+        <div class="product-card bg-white p-4 rounded-xl shadow-lg border">
+            <img src="https://i.postimg.cc/WbThTWzb/1783709402283.png" class="w-full h-40 object-cover rounded">
+            <h2 class="text-lg font-bold mt-2">Picadora y enciladora</h2>
+            <p class="text-sm text-gray-600">Generica (Motor Honda)</p>
+            <p class="text-xs mt-2 text-gray-500">32 cuchillas, 42 martillos, 13 caballos de potencia.</p>
+            <p class="text-blue-900 font-bold mt-2">Q10,500</p>
+            <a href="https://wa.me/50251816228?text=Hola, me interesa la Picadora" class="block bg-green-600 text-white text-center py-2 mt-3 rounded">Pedir por WhatsApp</a>
+        </div>
+        <!-- Producto 4 -->
+        <div class="product-card bg-white p-4 rounded-xl shadow-lg border">
+            <img src="https://i.postimg.cc/sDm1XYGm/1783709376724.png" class="w-full h-40 object-cover rounded">
+            <h2 class="text-lg font-bold mt-2">Revolvedora de cemento</h2>
+            <p class="text-sm text-gray-600">Mixel ultra-10</p>
+            <p class="text-xs mt-2 text-gray-500">250 L, motor Honda 5.5 HP, gancho remolcable.</p>
+            <p class="text-blue-900 font-bold mt-2">Q10,500</p>
+            <a href="https://wa.me/50251816228?text=Hola, me interesa la Revolvedora" class="block bg-green-600 text-white text-center py-2 mt-3 rounded">Pedir por WhatsApp</a>
+        </div>
+    </div>
+
+    <script>
+        function searchTools() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('product-card');
+            for (let i = 0; i < cards.length; i++) {
+                let title = cards[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
+                cards[i].style.display = title.includes(input) ? "" : "none";
+            }
+        }
+    </script>
+</body>
+</html>
