@@ -8,19 +8,20 @@
 </head>
 <body class="bg-gray-100 p-4">
 
-    <!-- Encabezado -->
-    <header class="text-center mb-8 p-6 bg-white rounded-lg shadow-md max-w-5xl mx-auto">
+    <header class="text-center mb-6 p-6 bg-white rounded-lg shadow-md max-w-5xl mx-auto">
         <h1 class="text-3xl font-bold text-blue-600">Multiherramientas.gt</h1>
         <p class="text-gray-600 mt-2">Encuentra la maquinaria industrial y herramientas que necesitas con los mejores precios.</p>
     </header>
 
-    <!-- Contenedor de Productos -->
-    <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+    <div class="max-w-5xl mx-auto mb-8">
+        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+            <input type="text" id="buscador" onkeyup="filtrarProductos()" placeholder="🔍 Buscar por nombre de herramienta o marca..." class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 font-medium">
+        </div>
+    </div>
 
-        <!-- LOS 4 PRODUCTOS ANTERIORES -->
+    <main id="lista-productos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
 
-        <!-- Producto Anterior 1 -->
-        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+        <div class="tarjeta-producto bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
             <div>
                 <img src="https://i.postimg.cc/D0Y0Xw8B/revolvedora.png" alt="Revolvedora de concreto" class="w-full h-48 object-contain rounded-lg mb-4">
                 <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Rhino Tools</span>
@@ -32,8 +33,7 @@
             </div>
         </div>
 
-        <!-- Producto Anterior 2 -->
-        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+        <div class="tarjeta-producto bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
             <div>
                 <img src="https://i.postimg.cc/tJnNf4XG/generador.png" alt="Generador eléctrico" class="w-full h-48 object-contain rounded-lg mb-4">
                 <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">DeWalt</span>
@@ -45,8 +45,7 @@
             </div>
         </div>
 
-        <!-- Producto Anterior 3 -->
-        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+        <div class="tarjeta-producto bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
             <div>
                 <img src="https://i.postimg.cc/8PzGzXf7/motobomba.png" alt="Motobomba de agua" class="w-full h-48 object-contain rounded-lg mb-4">
                 <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Honda</span>
@@ -58,8 +57,7 @@
             </div>
         </div>
 
-        <!-- Producto Anterior 4 -->
-        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+        <div class="tarjeta-producto bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
             <div>
                 <img src="https://i.postimg.cc/Kj8Xb7zY/soldadora.png" alt="Soldadora inversora" class="w-full h-48 object-contain rounded-lg mb-4">
                 <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Lincoln Electric</span>
@@ -71,11 +69,7 @@
             </div>
         </div>
 
-
-        <!-- LOS 10 PRODUCTOS NUEVOS -->
-
-        <!-- Producto 5 -->
-        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+        <div class="tarjeta-producto bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
             <div>
                 <img src="https://i.postimg.cc/wTHh1ZD5/1783724246990.png" alt="Desmontadora de llantas" class="w-full h-48 object-contain rounded-lg mb-4">
                 <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Eurotec</span>
@@ -87,8 +81,7 @@
             </div>
         </div>
 
-        <!-- Producto 6 -->
-        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+        <div class="tarjeta-producto bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
             <div>
                 <img src="https://i.postimg.cc/TPZbf4R2/1783724446872.png" alt="Compresor 80 galones" class="w-full h-48 object-contain rounded-lg mb-4">
                 <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Rhino Tools</span>
@@ -100,8 +93,7 @@
             </div>
         </div>
 
-        <!-- Producto 7 -->
-        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+        <div class="tarjeta-producto bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
             <div>
                 <img src="https://i.postimg.cc/zXXyZrnk/1783724547049.png" alt="Compresor 115 litros" class="w-full h-48 object-contain rounded-lg mb-4">
                 <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Rhino Tools</span>
@@ -113,8 +105,7 @@
             </div>
         </div>
 
-        <!-- Producto 8 -->
-        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+        <div class="tarjeta-producto bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
             <div>
                 <img src="https://i.postimg.cc/Y9HSXKrg/1783724680433.png" alt="Tricket" class="w-full h-48 object-contain rounded-lg mb-4">
                 <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Jack</span>
@@ -126,8 +117,7 @@
             </div>
         </div>
 
-        <!-- Producto 9 -->
-        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+        <div class="tarjeta-producto bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
             <div>
                 <img src="https://i.postimg.cc/mkZgsYFM/1783725107540.png" alt="Cepilladora para madera" class="w-full h-48 object-contain rounded-lg mb-4">
                 <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Woodmaxx</span>
@@ -139,8 +129,7 @@
             </div>
         </div>
 
-        <!-- Producto 10 -->
-        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+        <div class="tarjeta-producto bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
             <div>
                 <img src="https://i.postimg.cc/WbHbBJpL/1783726836211.png" alt="Cabezal compresor" class="w-full h-48 object-contain rounded-lg mb-4">
                 <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Rhino Tools</span>
@@ -152,8 +141,7 @@
             </div>
         </div>
 
-        <!-- Producto 11 -->
-        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+        <div class="tarjeta-producto bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
             <div>
                 <img src="https://i.postimg.cc/ZRHJVWD0/1783728815596.png" alt="Cortadora de concreto" class="w-full h-48 object-contain rounded-lg mb-4">
                 <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Rhino Tools</span>
@@ -165,8 +153,7 @@
             </div>
         </div>
 
-        <!-- Producto 12 -->
-        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+        <div class="tarjeta-producto bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
             <div>
                 <img src="https://i.postimg.cc/7Ydws8Xq/1783728925219.png" alt="Hidrolavadora DeWalt" class="w-full h-48 object-contain rounded-lg mb-4">
                 <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">DeWalt</span>
@@ -178,8 +165,7 @@
             </div>
         </div>
 
-        <!-- Producto 13 -->
-        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+        <div class="tarjeta-producto bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
             <div>
                 <img src="https://i.postimg.cc/cHxSgs1T/1783729057527.png" alt="Bomba para agua" class="w-full h-48 object-contain rounded-lg mb-4">
                 <span class="text-xs font-semibold bg-gray-100 text-gray-800 px-2 py-1 rounded">Maquinaria</span>
@@ -191,8 +177,7 @@
             </div>
         </div>
 
-        <!-- Producto 14 -->
-        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+        <div class="tarjeta-producto bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
             <div>
                 <img src="https://i.postimg.cc/KYNXyd7M/1783729230003.png" alt="Afilador de discos" class="w-full h-48 object-contain rounded-lg mb-4">
                 <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Hindustan</span>
@@ -206,10 +191,25 @@
 
     </main>
 
-    <!-- Pie de página -->
     <footer class="text-center text-xs text-gray-500 mt-12 pb-6">
         &copy; 2026 Multiherramientas.gt - Todos los derechos reservados.
     </footer>
+
+    <script>
+        function filtrarProductos() {
+            let input = document.getElementById('buscador').value.toLowerCase();
+            let tarjetas = document.getElementsByClassName('tarjeta-producto');
+
+            for (let i = 0; i < tarjetas.length; i++) {
+                let textoTarjeta = tarjetas[i].innerText.toLowerCase();
+                if (textoTarjeta.includes(input)) {
+                    tarjetas[i].style.display = "flex";
+                } else {
+                    tarjetas[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>
