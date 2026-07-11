@@ -2,63 +2,214 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>MULTIHERRAMIENTA.GT | Catálogo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiherramientas.gt | Catálogo</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 p-6">
-    <header class="max-w-6xl mx-auto mb-8">
-        <h1 class="text-4xl font-bold text-blue-900">MULTIHERRAMIENTA.GT</h1>
-        <input type="text" id="searchInput" onkeyup="searchTools()" placeholder="🔍 Buscar herramienta..." class="w-full p-4 mt-4 rounded-lg border">
+<body class="bg-gray-100 p-4">
+
+    <!-- Encabezado -->
+    <header class="text-center mb-8 p-6 bg-white rounded-lg shadow-md max-w-5xl mx-auto">
+        <h1 class="text-3xl font-bold text-blue-600">Multiherramientas.gt</h1>
+        <p class="text-gray-600 mt-2">Encuentra la maquinaria industrial y herramientas que necesitas con los mejores precios.</p>
     </header>
 
-    <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-        <!-- Producto 1 -->
-        <div class="product-card bg-white p-4 rounded-xl shadow-lg border">
-            <img src="https://i.postimg.cc/28G36QBp/1783709396751.png" class="w-full h-40 object-cover rounded">
-            <h2 class="text-lg font-bold mt-2">Bomba de agua 4x4</h2>
-            <p class="text-sm text-gray-600">Tekama engines</p>
-            <p class="text-xs mt-2 text-gray-500">Tipo de bomba centrífuga... 80 m altura máxima, motor 15 HP.</p>
-            <p class="text-blue-900 font-bold mt-2">Q9,500</p>
-            <a href="https://wa.me/50251816228?text=Hola, me interesa la Bomba de agua 4x4" class="block bg-green-600 text-white text-center py-2 mt-3 rounded">Pedir por WhatsApp</a>
-        </div>
-        <!-- Producto 2 -->
-        <div class="product-card bg-white p-4 rounded-xl shadow-lg border">
-            <img src="https://i.postimg.cc/zX73BCHx/1783709389545.png" class="w-full h-40 object-cover rounded">
-            <h2 class="text-lg font-bold mt-2">Desgranadora de maíz</h2>
-            <p class="text-sm text-gray-600">Tudor</p>
-            <p class="text-xs mt-2 text-gray-500">Motor eléctrico 1.5 HP, capacidad 4 quintales/hora.</p>
-            <p class="text-blue-900 font-bold mt-2">Q2,100</p>
-            <a href="https://wa.me/50251816228?text=Hola, me interesa la Desgranadora" class="block bg-green-600 text-white text-center py-2 mt-3 rounded">Pedir por WhatsApp</a>
-        </div>
-        <!-- Producto 3 -->
-        <div class="product-card bg-white p-4 rounded-xl shadow-lg border">
-            <img src="https://i.postimg.cc/WbThTWzb/1783709402283.png" class="w-full h-40 object-cover rounded">
-            <h2 class="text-lg font-bold mt-2">Picadora y enciladora</h2>
-            <p class="text-sm text-gray-600">Generica (Motor Honda)</p>
-            <p class="text-xs mt-2 text-gray-500">32 cuchillas, 42 martillos, 13 caballos de potencia.</p>
-            <p class="text-blue-900 font-bold mt-2">Q10,500</p>
-            <a href="https://wa.me/50251816228?text=Hola, me interesa la Picadora" class="block bg-green-600 text-white text-center py-2 mt-3 rounded">Pedir por WhatsApp</a>
-        </div>
-        <!-- Producto 4 -->
-        <div class="product-card bg-white p-4 rounded-xl shadow-lg border">
-            <img src="https://i.postimg.cc/sDm1XYGm/1783709376724.png" class="w-full h-40 object-cover rounded">
-            <h2 class="text-lg font-bold mt-2">Revolvedora de cemento</h2>
-            <p class="text-sm text-gray-600">Mixel ultra-10</p>
-            <p class="text-xs mt-2 text-gray-500">250 L, motor Honda 5.5 HP, gancho remolcable.</p>
-            <p class="text-blue-900 font-bold mt-2">Q10,500</p>
-            <a href="https://wa.me/50251816228?text=Hola, me interesa la Revolvedora" class="block bg-green-600 text-white text-center py-2 mt-3 rounded">Pedir por WhatsApp</a>
-        </div>
-    </div>
+    <!-- Contenedor de Productos -->
+    <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
 
-    <script>
-        function searchTools() {
-            let input = document.getElementById('searchInput').value.toLowerCase();
-            let cards = document.getElementsByClassName('product-card');
-            for (let i = 0; i < cards.length; i++) {
-                let title = cards[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
-                cards[i].style.display = title.includes(input) ? "" : "none";
-            }
-        }
-    </script>
+        <!-- LOS 4 PRODUCTOS ANTERIORES -->
+
+        <!-- Producto Anterior 1 -->
+        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+            <div>
+                <img src="https://i.postimg.cc/D0Y0Xw8B/revolvedora.png" alt="Revolvedora de concreto" class="w-full h-48 object-contain rounded-lg mb-4">
+                <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Rhino Tools</span>
+                <h2 class="text-lg font-bold text-gray-800 mt-2">Revolvedora de concreto 1 saco con motor 15 HP</h2>
+            </div>
+            <div class="mt-4">
+                <p class="text-xl font-black text-blue-600">Q13,500</p>
+                <a href="https://wa.me/50236389133?text=Hola,%20me%20interesa%20la%20Revolvedora%20de%20concreto%201%20saco%20Rhino%20Tools" target="_blank" class="block bg-green-600 text-white text-center py-2 mt-3 rounded-lg font-bold hover:bg-green-700 transition">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- Producto Anterior 2 -->
+        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+            <div>
+                <img src="https://i.postimg.cc/tJnNf4XG/generador.png" alt="Generador eléctrico" class="w-full h-48 object-contain rounded-lg mb-4">
+                <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">DeWalt</span>
+                <h2 class="text-lg font-bold text-gray-800 mt-2">Generador eléctrico a gasolina 6500W 110V/220V</h2>
+            </div>
+            <div class="mt-4">
+                <p class="text-xl font-black text-blue-600">Q8,500</p>
+                <a href="https://wa.me/50236389133?text=Hola,%20me%20interesa%20el%20Generador%20el%C3%A9ctrico%20DeWalt" target="_blank" class="block bg-green-600 text-white text-center py-2 mt-3 rounded-lg font-bold hover:bg-green-700 transition">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- Producto Anterior 3 -->
+        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+            <div>
+                <img src="https://i.postimg.cc/8PzGzXf7/motobomba.png" alt="Motobomba de agua" class="w-full h-48 object-contain rounded-lg mb-4">
+                <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Honda</span>
+                <h2 class="text-lg font-bold text-gray-800 mt-2">Motobomba de agua caudal 3x3 pulgadas motor 6.5 HP</h2>
+            </div>
+            <div class="mt-4">
+                <p class="text-xl font-black text-blue-600">Q3,800</p>
+                <a href="https://wa.me/50236389133?text=Hola,%20me%20interesa%20la%20Motobomba%20de%20agua%20Honda" target="_blank" class="block bg-green-600 text-white text-center py-2 mt-3 rounded-lg font-bold hover:bg-green-700 transition">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- Producto Anterior 4 -->
+        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+            <div>
+                <img src="https://i.postimg.cc/Kj8Xb7zY/soldadora.png" alt="Soldadora inversora" class="w-full h-48 object-contain rounded-lg mb-4">
+                <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Lincoln Electric</span>
+                <h2 class="text-lg font-bold text-gray-800 mt-2">Soldadora inversora profesional 200 Amperios</h2>
+            </div>
+            <div class="mt-4">
+                <p class="text-xl font-black text-blue-600">Q4,200</p>
+                <a href="https://wa.me/50236389133?text=Hola,%20me%20interesa%20la%20Soldadora%20inversora%20Lincoln%20Electric" target="_blank" class="block bg-green-600 text-white text-center py-2 mt-3 rounded-lg font-bold hover:bg-green-700 transition">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+
+        <!-- LOS 10 PRODUCTOS NUEVOS -->
+
+        <!-- Producto 5 -->
+        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+            <div>
+                <img src="https://i.postimg.cc/wTHh1ZD5/1783724246990.png" alt="Desmontadora de llantas" class="w-full h-48 object-contain rounded-lg mb-4">
+                <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Eurotec</span>
+                <h2 class="text-lg font-bold text-gray-800 mt-2">Desmontadora de llantas semi automática Rin 12-24 110V</h2>
+            </div>
+            <div class="mt-4">
+                <p class="text-xl font-black text-blue-600">Q10,000</p>
+                <a href="https://wa.me/50236389133?text=Hola,%20me%20interesa%20la%20Desmontadora%20de%20llantas%20Eurotec" target="_blank" class="block bg-green-600 text-white text-center py-2 mt-3 rounded-lg font-bold hover:bg-green-700 transition">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- Producto 6 -->
+        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+            <div>
+                <img src="https://i.postimg.cc/TPZbf4R2/1783724446872.png" alt="Compresor 80 galones" class="w-full h-48 object-contain rounded-lg mb-4">
+                <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Rhino Tools</span>
+                <h2 class="text-lg font-bold text-gray-800 mt-2">Compresor de aire industrial 80 galones 7.5 HP</h2>
+            </div>
+            <div class="mt-4">
+                <p class="text-xl font-black text-blue-600">Q9,000</p>
+                <a href="https://wa.me/50236389133?text=Hola,%20me%20interesa%20el%20Compresor%20de%2080%20galones%20Rhino%20Tools" target="_blank" class="block bg-green-600 text-white text-center py-2 mt-3 rounded-lg font-bold hover:bg-green-700 transition">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- Producto 7 -->
+        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+            <div>
+                <img src="https://i.postimg.cc/zXXyZrnk/1783724547049.png" alt="Compresor 115 litros" class="w-full h-48 object-contain rounded-lg mb-4">
+                <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Rhino Tools</span>
+                <h2 class="text-lg font-bold text-gray-800 mt-2">Compresor de aire vertical 115 litros 3.5 HP</h2>
+            </div>
+            <div class="mt-4">
+                <p class="text-lg font-bold text-orange-600">Consultar precio</p>
+                <a href="https://wa.me/50236389133?text=Hola,%20me%20interesa%20el%20Compresor%20de%20115%20litros%20Rhino%20Tools" target="_blank" class="block bg-green-600 text-white text-center py-2 mt-3 rounded-lg font-bold hover:bg-green-700 transition">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- Producto 8 -->
+        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+            <div>
+                <img src="https://i.postimg.cc/Y9HSXKrg/1783724680433.png" alt="Tricket" class="w-full h-48 object-contain rounded-lg mb-4">
+                <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Jack</span>
+                <h2 class="text-lg font-bold text-gray-800 mt-2">Tricket (gato de lagarto) perfil bajo 3.5 toneladas</h2>
+            </div>
+            <div class="mt-4">
+                <p class="text-xl font-black text-blue-600">Q1,350</p>
+                <a href="https://wa.me/50236389133?text=Hola,%20me%20interesa%20el%20Tricket%20de%203.5%20toneladas" target="_blank" class="block bg-green-600 text-white text-center py-2 mt-3 rounded-lg font-bold hover:bg-green-700 transition">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- Producto 9 -->
+        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+            <div>
+                <img src="https://i.postimg.cc/mkZgsYFM/1783725107540.png" alt="Cepilladora para madera" class="w-full h-48 object-contain rounded-lg mb-4">
+                <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Woodmaxx</span>
+                <h2 class="text-lg font-bold text-gray-800 mt-2">Cepilladora industrial para madera 20 pulgadas PT-20N</h2>
+            </div>
+            <div class="mt-4">
+                <p class="text-xl font-black text-blue-600">Q19,500</p>
+                <a href="https://wa.me/50236389133?text=Hola,%20me%20interesa%20la%20Cepilladora%20Woodmaxx" target="_blank" class="block bg-green-600 text-white text-center py-2 mt-3 rounded-lg font-bold hover:bg-green-700 transition">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- Producto 10 -->
+        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+            <div>
+                <img src="https://i.postimg.cc/WbHbBJpL/1783726836211.png" alt="Cabezal compresor" class="w-full h-48 object-contain rounded-lg mb-4">
+                <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Rhino Tools</span>
+                <h2 class="text-lg font-bold text-gray-800 mt-2">Cabezal para compresor de aire de 2 pistones</h2>
+            </div>
+            <div class="mt-4">
+                <p class="text-xl font-black text-blue-600">Q1,650</p>
+                <a href="https://wa.me/50236389133?text=Hola,%20me%20interesa%20el%20Cabezal%20para%20compresor%20Rhino%20Tools" target="_blank" class="block bg-green-600 text-white text-center py-2 mt-3 rounded-lg font-bold hover:bg-green-700 transition">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- Producto 11 -->
+        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+            <div>
+                <img src="https://i.postimg.cc/ZRHJVWD0/1783728815596.png" alt="Cortadora de concreto" class="w-full h-48 object-contain rounded-lg mb-4">
+                <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Rhino Tools</span>
+                <h2 class="text-lg font-bold text-gray-800 mt-2">Cortadora de concreto a gasolina CRC35AH</h2>
+            </div>
+            <div class="mt-4">
+                <p class="text-xl font-black text-blue-600">Q14,500</p>
+                <a href="https://wa.me/50236389133?text=Hola,%20me%20interesa%20la%20Cortadora%20de%20concreto%20Rhino%20Tools" target="_blank" class="block bg-green-600 text-white text-center py-2 mt-3 rounded-lg font-bold hover:bg-green-700 transition">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- Producto 12 -->
+        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+            <div>
+                <img src="https://i.postimg.cc/7Ydws8Xq/1783728925219.png" alt="Hidrolavadora DeWalt" class="w-full h-48 object-contain rounded-lg mb-4">
+                <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">DeWalt</span>
+                <h2 class="text-lg font-bold text-gray-800 mt-2">Hidrolavadora eléctrica 2400 PSI DWPW2400</h2>
+            </div>
+            <div class="mt-4">
+                <p class="text-xl font-black text-blue-600">Q3,900</p>
+                <a href="https://wa.me/50236389133?text=Hola,%20me%20interesa%20la%20Hidrolavadora%20DeWalt" target="_blank" class="block bg-green-600 text-white text-center py-2 mt-3 rounded-lg font-bold hover:bg-green-700 transition">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- Producto 13 -->
+        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+            <div>
+                <img src="https://i.postimg.cc/cHxSgs1T/1783729057527.png" alt="Bomba para agua" class="w-full h-48 object-contain rounded-lg mb-4">
+                <span class="text-xs font-semibold bg-gray-100 text-gray-800 px-2 py-1 rounded">Maquinaria</span>
+                <h2 class="text-lg font-bold text-gray-800 mt-2">Bomba para agua eje libre 3x3</h2>
+            </div>
+            <div class="mt-4">
+                <p class="text-xl font-black text-blue-600">Q4,000</p>
+                <a href="https://wa.me/50236389133?text=Hola,%20me%20interesa%20la%20Bomba%20para%20agua%20eje%20libre" target="_blank" class="block bg-green-600 text-white text-center py-2 mt-3 rounded-lg font-bold hover:bg-green-700 transition">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- Producto 14 -->
+        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col justify-between">
+            <div>
+                <img src="https://i.postimg.cc/KYNXyd7M/1783729230003.png" alt="Afilador de discos" class="w-full h-48 object-contain rounded-lg mb-4">
+                <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Hindustan</span>
+                <h2 class="text-lg font-bold text-gray-800 mt-2">Afilador de discos de molino de nixtamal</h2>
+            </div>
+            <div class="mt-4">
+                <p class="text-xl font-black text-blue-600">Q2,350</p>
+                <a href="https://wa.me/50236389133?text=Hola,%20me%20interesa%20el%20Afilador%20de%20discos%20Hindustan" target="_blank" class="block bg-green-600 text-white text-center py-2 mt-3 rounded-lg font-bold hover:bg-green-700 transition">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="text-center text-xs text-gray-500 mt-12 pb-6">
+        &copy; 2026 Multiherramientas.gt - Todos los derechos reservados.
+    </footer>
+
 </body>
 </html>
