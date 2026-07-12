@@ -3,265 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiherramientas.gt | Catálogo</title>
+    <title>Multiherramientas GT | Equipos Profesionales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background-color: #f4f6f9;
-            color: #333;
-            padding: 20px;
-        }
-        header {
-            text-align: center;
-            padding: 30px 0;
-            background: linear-gradient(135deg, #1f2937, #111827);
-            color: white;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        .search-container {
-            max-width: 500px;
-            margin: 0 auto 30px auto;
-            position: relative;
-        }
-        .search-container input {
-            width: 100%;
-            padding: 15px 20px;
-            font-size: 16px;
-            border: 2px solid #ddd;
-            border-radius: 50px;
-            outline: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .search-container input:focus {
-            border-color: #3b82f6;
-            box-shadow: 0 4px 10px rgba(59,130,246,0.2);
-        }
-        .grid-productos {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-        }
-        .img-contenedor {
-            width: 100%;
-            height: 220px;
-            background-color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            position: relative;
-        }
-        .img-contenedor img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 10px;
-        }
-        .info {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-        .info h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: #1f2937;
-        }
-        .info p {
-            font-size: 0.95rem;
-            color: #6b7280;
-            margin-bottom: 15px;
-            line-height: 1.4;
-        }
-        .precio {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #10b981;
-            margin-top: auto;
-        }
+        :root { --amarillo: #fbc02d; --azul-oscuro: #0d233a; --verde-whatsapp: #25d366; }
+        body { font-family: sans-serif; background-color: #f4f6f9; margin: 0; }
+        
+        /* Encabezado con Logo */
+        header { background-color: var(--amarillo); padding: 15px 5%; text-align: center; }
+        .logo-web { height: 60px; }
+        
+        /* Banner Decorativo */
+        .hero-banner img { width: 100%; display: block; }
+        
+        /* Catálogo */
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
+        .product-card { background: white; padding: 15px; border-radius: 8px; cursor: pointer; text-align: center; border: 1px solid #ddd; }
+        .product-card img { max-width: 100%; height: 150px; object-fit: contain; }
+        
+        /* Modal de Burbuja */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); align-items: center; justify-content: center; z-index: 1000; }
+        .modal.active { display: flex; }
+        .modal-content { background: white; padding: 20px; border-radius: 10px; max-width: 500px; width: 90%; text-align: center; }
+        .btn-whatsapp-modal { display: block; background: var(--verde-whatsapp); color: white; padding: 15px; border-radius: 5px; text-decoration: none; margin-top: 15px; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Multiherramientas.gt</h1>
-        <p>El mejor equipo para tus proyectos</p>
+        <img src="Logo Multiherramientas.Gt.png" alt="Logo" class="logo-web">
     </header>
 
-    <div class="search-container">
-        <input type="text" id="buscador" onkeyup="filtrarProductos()" placeholder="Buscar herramienta o equipo...">
+    <div class="hero-banner">
+        <img src="Imagen de herramientas.png" alt="Banner Decorativo">
     </div>
 
-    <main class="grid-productos" id="lista-productos">
-        
-        <!-- Producto 1 -->
-        <div class="card">
-            <div class="img-contenedor">
-                <img src="Tricket de 3.5 ton.png" alt="Tricket de 3.5 toneladas">
-            </div>
-            <div class="info">
-                <h3>Tricket de 3.5 Toneladas</h3>
-                <p>Gato hidráulico de patín de alta resistencia para talleres mecánicos.</p>
-                <div class="precio">Consultar Precio</div>
-            </div>
-        </div>
-
-        <!-- Producto 2 -->
-        <div class="card">
-            <div class="img-contenedor">
-                <img src="Desmontadora de llantas.png" alt="Desmontadora de llantas">
-            </div>
-            <div class="info">
-                <h3>Desmontadora de Llantas</h3>
-                <p>Equipo profesional y eficiente para cambio rápido de neumáticos.</p>
-                <div class="precio">Consultar Precio</div>
-            </div>
-        </div>
-
-        <!-- Producto 3 -->
-        <div class="card">
-            <div class="img-contenedor">
-                <img src="Cortadora de concreto.png" alt="Cortadora de concreto">
-            </div>
-            <div class="info">
-                <h3>Cortadora de Concreto</h3>
-                <p>Cortes rectos y limpios en pavimentos, pisos y losas de concreto.</p>
-                <div class="precio">Consultar Precio</div>
-            </div>
-        </div>
-
-        <!-- Producto 4 -->
-        <div class="card">
-            <div class="img-contenedor">
-                <img src="Afilador de discos.png" alt="Afilador de discos">
-            </div>
-            <div class="info">
-                <h3>Afilador de Discos / Cizalla</h3>
-                <p>Herramienta robusta ideal para el mantenimiento y corte manual de varilla.</p>
-                <div class="precio">Consultar Precio</div>
-            </div>
-        </div>
-
-        <!-- Producto 5 -->
-        <div class="card">
-            <div class="img-contenedor">
-                <img src="Bomba para agua.png" alt="Bomba para agua">
-            </div>
-            <div class="info">
-                <h3>Bomba para Agua Centrífuga</h3>
-                <p>Alto flujo y presión, ideal para acoplar a sistemas de riego o desagüe.</p>
-                <div class="precio">Consultar Precio</div>
-            </div>
-        </div>
-
-        <!-- Producto 6 -->
-        <div class="card">
-            <div class="img-contenedor">
-                <img src="Hidrolabadora delwalt.png" alt="Hidrolavadora DeWALT">
-            </div>
-            <div class="info">
-                <h3>Hidrolavadora DeWALT</h3>
-                <p>Limpieza profunda con máxima potencia y presión de agua.</p>
-                <div class="precio">Consultar Precio</div>
-            </div>
-        </div>
-
-        <!-- Producto 7 -->
-        <div class="card">
-            <div class="img-contenedor">
-                <img src="Cepilladora.png" alt="Cepilladora">
-            </div>
-            <div class="info">
-                <h3>Cepilladora de Banco</h3>
-                <p>Regruesadora de madera de alta precisión para carpintería profesional.</p>
-                <div class="precio">Consultar Precio</div>
-            </div>
-        </div>
-
-        <!-- Producto 8 -->
-        <div class="card">
-            <div class="img-contenedor">
-                <img src="Compresor 115 litros.png" alt="Compresor 115 litros">
-            </div>
-            <div class="info">
-                <h3>Compresor de Aire 115 Litros</h3>
-                <p>Compresor vertical potente con motor ideal para herramientas neumáticas.</p>
-                <div class="precio">Consultar Precio</div>
-            </div>
-        </div>
-
-        <!-- Producto 9 -->
-        <div class="card">
-            <div class="img-contenedor">
-                <img src="Compresor 80 galones.png" alt="Compresor 80 galones">
-            </div>
-            <div class="info">
-                <h3>Compresor de Aire 80 Galones</h3>
-                <p>Gran capacidad de almacenamiento para alta demanda de aire continuo.</p>
-                <div class="precio">Consultar Precio</div>
-            </div>
-        </div>
-
-        <!-- Producto 10 -->
-        <div class="card">
-            <div class="img-contenedor">
-                <img src="Cabezal para compresor.png" alt="Cabezal para compresor">
-            </div>
-            <div class="info">
-                <h3>Cabezal para Compresor</h3>
-                <p>Repuesto de alta eficiencia y rendimiento para sistemas de aire pesado.</p>
-                <div class="precio">Consultar Precio</div>
-            </div>
-        </div>
-
+    <main class="catalog-container">
+        <div class="products-grid" id="productsGrid"></div>
     </main>
 
-    <script>
-        function filtrarProductos() {
-            const input = document.getElementById('buscador');
-            const filter = input.value.toLowerCase();
-            const grid = document.getElementById('lista-productos');
-            const cards = grid.getElementsByClassName('card');
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <h2 id="modalTitle"></h2>
+            <img id="modalImg" src="" style="width:100%; height:200px; object-fit:contain;">
+            <ul id="modalSpecsList" style="text-align: left;"></ul>
+            <a href="" id="modalWhatsAppBtn" class="btn-whatsapp-modal" target="_blank">Consultar por WhatsApp</a>
+            <button onclick="closeModal()" style="margin-top:10px;">Cerrar</button>
+        </div>
+    </div>
 
-            for (let i = 0; i < cards.length; i++) {
-                const titulo = cards[i].getElementsByTagName('h3')[0];
-                const textoTxt = titulo.textContent || titulo.innerText;
-                if (textoTxt.toLowerCase().indexOf(filter) > -1) {
-                    cards[i].style.display = "";
-                } else {
-                    cards[i].style.display = "none";
-                }
-            }
+    <script src="productos.js"></script>
+    <script>
+        const grid = document.getElementById('productsGrid');
+        const modal = document.getElementById('productModal');
+
+        function render() {
+            listaProductos.forEach(prod => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.onclick = () => openModal(prod.id);
+                card.innerHTML = `<img src="${prod.imagen}"><h3>${prod.nombre}</h3><p>${prod.resumen}</p>`;
+                grid.appendChild(card);
+            });
         }
+
+        function openModal(id) {
+            const prod = listaProductos.find(p => p.id === id);
+            document.getElementById('modalTitle').innerText = prod.nombre;
+            document.getElementById('modalImg').src = prod.imagen;
+            document.getElementById('modalSpecsList').innerHTML = prod.especificaciones.map(s => `<li>${s}</li>`).join('');
+            const msg = encodeURIComponent(`Hola, me interesa: ${prod.nombre}`);
+            document.getElementById('modalWhatsAppBtn').href = `https://wa.me/50236389133?text=${msg}`;
+            modal.classList.add('active');
+        }
+
+        function closeModal() { modal.classList.remove('active'); }
+        render();
     </script>
 </body>
 </html>
-
