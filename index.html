@@ -2,41 +2,80 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Multiherramientas.gt</title>
+    <title>Catálogo Multiherramientas.gt</title>
     <style>
-        .banner-azul { background-color: #1a1a2e; color: white; padding: 20px; text-align: center; }
-        .producto { border: 1px solid #ccc; margin: 10px; padding: 10px; width: 250px; display: inline-block; vertical-align: top; text-align: center; border-radius: 8px; }
-        #buscador { width: 80%; padding: 10px; margin: 20px auto; display: block; border: 1px solid #ccc; border-radius: 5px; }
+        body { font-family: sans-serif; background: #f4f4f9; margin: 0; }
+        .banner-azul { background: #1a1a2e; color: white; padding: 30px; text-align: center; }
+        #buscador { width: 80%; max-width: 600px; padding: 15px; margin: 20px auto; display: block; border: 2px solid #ddd; border-radius: 25px; }
+        .grid { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
+        .card { background: white; border-radius: 10px; width: 280px; margin: 15px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 160px; object-fit: contain; }
+        .card h3 { color: #1a1a2e; font-size: 1.1em; margin: 10px 0; }
+        .precio { color: #d9534f; font-weight: bold; }
+        .info { font-size: 0.85em; color: #666; margin: 10px 0; }
+        .btn { background: #25d366; color: white; border: none; padding: 10px; width: 100%; border-radius: 5px; cursor: pointer; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <header class="banner-azul">
         <h1>Multiherramientas.gt</h1>
-        <p>El mejor equipo para tus proyectos</p>
+        <p>Calidad, garantía y respaldo en cada compra.</p>
     </header>
 
-    <input type="text" id="buscador" placeholder="Buscar herramienta o equipo...">
+    <input type="text" id="buscador" placeholder="🔍 Buscar por nombre, marca o detalle...">
 
-    <div style="text-align: center; padding: 20px;">
-        <div class="producto"><img src="Soldadora rhino.png" width="150"><h3>Soldadora 3 en 1</h3><p>Q2,000</p><a href="https://wa.me/50236389133?text=Hola, quiero la Soldadora 3 en 1"><button>WhatsApp</button></a></div>
-        <div class="producto"><img src="Soldadora xcort.png" width="150"><h3>Soldadora Xcort</h3><p>Q3,600</p><a href="https://wa.me/50236389133?text=Hola, quiero la Soldadora Xcort"><button>WhatsApp</button></a></div>
-        <div class="producto"><img src="Generador inversor.png" width="150"><h3>Generador Inversor</h3><p>Q12,500</p><a href="https://wa.me/50236389133?text=Hola, quiero el Generador"><button>WhatsApp</button></a></div>
-        <div class="producto"><img src="Revolvedora de cemento.png" width="150"><h3>Revolvedora 5 HP</h3><p>Q12,500</p><a href="https://wa.me/50236389133?text=Hola, quiero la Revolvedora"><button>WhatsApp</button></a></div>
-        <div class="producto"><img src="Desgranador.png" width="150"><h3>Desgranadora</h3><p>Q1,750</p><a href="https://wa.me/50236389133?text=Hola, quiero la Desgranadora"><button>WhatsApp</button></a></div>
-        <div class="producto"><img src="Fumigadora para parihuela.png" width="150"><h3>Fumigadora</h3><p>Consultar</p><a href="https://wa.me/50236389133?text=Hola, quiero la Fumigadora"><button>WhatsApp</button></a></div>
-        <div class="producto"><img src="Molino para nixtamal.png" width="150"><h3>Molino Nixtamal</h3><p>Consultar</p><a href="https://wa.me/50236389133?text=Hola, quiero el Molino"><button>WhatsApp</button></a></div>
-        <div class="producto"><img src="Rodo compactador.png" width="150"><h3>Rodillo Compactador</h3><p>Consultar</p><a href="https://wa.me/50236389133?text=Hola, quiero el Rodillo"><button>WhatsApp</button></a></div>
-        <div class="producto"><img src="Hidrolabadora honda.png" width="150"><h3>Hidrolavadora</h3><p>Consultar</p><a href="https://wa.me/50236389133?text=Hola, quiero la Hidrolavadora"><button>WhatsApp</button></a></div>
-        <div class="producto"><img src="Mezcladora 2 sacos.png" width="150"><h3>Mezcladora 2 sacos</h3><p>Consultar</p><a href="https://wa.me/50236389133?text=Hola, quiero la Mezcladora"><button>WhatsApp</button></a></div>
-        <div class="producto"><img src="Mezcladora 2 sacos 4 llantas.png" width="150"><h3>Mezcladora 600L</h3><p>Q19,000</p><a href="https://wa.me/50236389133?text=Hola, quiero la Mezcladora 600L"><button>WhatsApp</button></a></div>
-        <div class="producto"><img src="Revolvedora 1 saco.png" width="150"><h3>Revolvedora 1 saco</h3><p>Q4,000</p><a href="https://wa.me/50236389133?text=Hola, quiero la Revolvedora 1 saco"><button>WhatsApp</button></a></div>
-        <div class="producto"><img src="Hidrolabadora rhino.png" width="150"><h3>Hidrolavadora Ind.</h3><p>Q4,300</p><a href="https://wa.me/50236389133?text=Hola, quiero la Hidrolavadora Ind."><button>WhatsApp</button></a></div>
-        <div class="producto"><img src="Bibrador de concreto.png" width="150"><h3>Vibradora Eléc.</h3><p>Q1,450</p><a href="https://wa.me/50236389133?text=Hola, quiero la Vibradora"><button>WhatsApp</button></a></div>
-        <div class="producto"><img src="Juegos de copas 1.png" width="150"><h3>Juego de Copas</h3><p>Q1,300</p><a href="https://wa.me/50236389133?text=Hola, quiero el Juego de Copas"><button>WhatsApp</button></a></div>
-        <div class="producto"><img src="Pistola de impacto milwaukee.png" width="150"><h3>Pistola Impacto</h3><p>Q5,800</p><a href="https://wa.me/50236389133?text=Hola, quiero la Pistola Impacto"><button>WhatsApp</button></a></div>
-        <div class="producto"><img src="Llave de impacto milwaukee.png" width="150"><h3>Llave Impacto</h3><p>Consultar</p><a href="https://wa.me/50236389133?text=Hola, quiero la Llave Impacto"><button>WhatsApp</button></a></div>
+    <div class="grid" id="lista">
+        <script>
+            const productos = [
+                {n:"Desmontadora llantas", p:"Q10,000", img:"Desmontadora de llantas.png", det:"Eurotec, Rin 12-24, semiautomática."},
+                {n:"Compresor 80 galones", p:"Q9,000", img:"Compresor 80 galones.png", det:"Rhino Tools, 7.5 HP, uso industrial."},
+                {n:"Compresor 115 litros", p:"Consultar", img:"Compresor 115 litros.png", det:"Rhino Tools, 3.5 HP, diseño vertical."},
+                {n:"Tricket 3.5 Toneladas", p:"Q1,350", img:"Tricket lagarto.png", det:"Perfil bajo, doble émbolo, levantamiento rápido."},
+                {n:"Cepilladora Woodmaxx", p:"Q19,500", img:"Cepilladora 20 pulgadas.png", det:"PT-20N, 5 HP, 20 pulgadas, 4 cuchillas."},
+                {n:"Cabezal compresor", p:"Q1,650", img:"Cabezal 2 pistones.png", det:"Cabezal de 2 pistones para repuesto."},
+                {n:"Cortadora concreto", p:"Q14,500", img:"Cortadora de concreto.png", det:"Rhino CRC35AH, motor Honda 13 HP."},
+                {n:"Hidrolavadora DeWalt", p:"Q3,900", img:"Hidrolavadora Dewalt.png", det:"2400 PSI, incluye 5 boquillas."},
+                {n:"Bomba agua 3x3", p:"Q4,000", img:"Bomba de agua 3x3.png", det:"Eje libre, entrada y salida 3 pulgadas."},
+                {n:"Afilador discos", p:"Q2,350", img:"Afilador de discos.png", det:"Hindustan, incluye buril fino y estándar."},
+                {n:"Soldadora Rhino 3 en 1", p:"Q2,000", img:"Soldadora rhino.png", det:"195A, 110/220V, equipo original."},
+                {n:"Soldadora XCORT 300A", p:"Q3,600", img:"Soldadora xcort.png", det:"MIG/MAG/MMA, incluye accesorios."},
+                {n:"Generador Inversor", p:"Q12,500", img:"Generador inversor.png", det:"A-iPower, 2600W, tecnología inverter."},
+                {n:"Revolvedora 5 HP", p:"Q12,500", img:"Revolvedora de cemento.png", det:"Honda, capacidad 1 saco, remolcable."},
+                {n:"Desgranadora", p:"Q1,750", img:"Desgranador.png", det:"Tudor, motor eléctrico 1.5 HP."},
+                {n:"Fumigadora parihuela", p:"Consultar", img:"Fumigadora para parihuela.png", det:"100m manguera, ruedas de tracción."},
+                {n:"Molino nixtamal", p:"Consultar", img:"Molino para nixtamal.png", det:"Estructura reforzada, motor Cyclone 6.5HP."},
+                {n:"Rodillo compactador", p:"Consultar", img:"Rodo compactador.png", det:"Honda GX160, 60cm tambor."},
+                {n:"Hidrolavadora Honda", p:"Consultar", img:"Hidrolabadora honda.png", det:"3300 PSI, bomba industrial italiana."},
+                {n:"Mezcladora 9HP", p:"Consultar", img:"Mezcladora 2 sacos.png", det:"Motor Honda 9HP, capacidad 2 sacos."},
+                {n:"Mezcladora 600L", p:"Q19,000", img:"Mezcladora 2 sacos 4 llantas.png", det:"Honda 15HP, remolcable, 4 llantas."},
+                {n:"Revolvedora 1 saco", p:"Q4,000", img:"Revolvedora 1 saco.png", det:"Rhino, motor Lifan 3HP, 200 litros."},
+                {n:"Hidrolavadora Rhino", p:"Q4,300", img:"Hidrolabadora rhino.png", det:"2000 PSI, incluye accesorios."},
+                {n:"Vibradora concreto", p:"Q1,450", img:"Bibrador de concreto.png", det:"Rhino 1600W, chicote 4 metros."},
+                {n:"Juego copas impacto", p:"Q1,300", img:"Juegos de copas 1.png", det:"26 piezas, Rhino Tools."},
+                {n:"Pistola impacto Milwaukee", p:"Q5,800", img:"Pistola de impacto milwaukee.png", det:"1491 Nm torque, industrial."},
+                {n:"Llave impacto Milwaukee", p:"Consultar", img:"Llave de impacto milwaukee.png", det:"Incluye 2 baterías y estuche."}
+            ];
+
+            const lista = document.getElementById('lista');
+            productos.forEach(prod => {
+                lista.innerHTML += `
+                    <div class="card">
+                        <img src="${prod.img}" onerror="this.src='https://via.placeholder.com/150'">
+                        <h3>${prod.n}</h3>
+                        <p class="precio">${prod.p}</p>
+                        <div class="info">${prod.det}<br><small>Rec: Pago contra entrega, garantía y factura.</small></div>
+                        <a href="https://wa.me/50236389133?text=Hola, quiero información sobre: ${prod.n}"><button class="btn">Consultar por WhatsApp</button></a>
+                    </div>`;
+            });
+
+            document.getElementById('buscador').addEventListener('keyup', (e) => {
+                const busca = e.target.value.toLowerCase();
+                document.querySelectorAll('.card').forEach(c => {
+                    c.style.display = c.innerText.toLowerCase().includes(busca) ? 'block' : 'none';
+                });
+            });
+        </script>
     </div>
-
 </body>
 </html>
