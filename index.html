@@ -357,7 +357,7 @@
   <p>Consultas y pedidos por WhatsApp: <strong>+502 3638-9133</strong></p>
 </footer>
 
-<a class="fab" href="https://wa.me/50236389133?text=Hola,%20quiero%20información%20sobre%20su%20catálogo" aria-label="Escribir por WhatsApp">
+<a class="fab" id="fabWa" href="#" aria-label="Escribir por WhatsApp">
   <svg viewBox="0 0 32 32"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.7 4.61 1.902 6.478L4 29l7.706-1.87A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3zm6.883 16.897c-.293.822-1.454 1.51-2.373 1.706-.63.132-1.454.238-4.226-.907-3.545-1.464-5.826-5.06-6.005-5.294-.172-.234-1.44-1.914-1.44-3.65 0-1.735.907-2.586 1.229-2.942.322-.356.702-.445.936-.445.234 0 .468.002.673.012.216.01.505-.082.79.603.293.703.994 2.437 1.081 2.615.088.178.147.386.03.62-.117.234-.176.379-.35.583-.176.203-.37.454-.528.61-.176.174-.36.362-.155.71.205.35.912 1.505 1.957 2.437 1.344 1.2 2.478 1.572 2.827 1.75.35.176.554.146.76-.088.205-.234.876-1.02 1.11-1.37.234-.35.468-.29.79-.174.322.117 2.05.966 2.4 1.142.35.176.585.264.673.41.088.146.088.847-.205 1.67z"/></svg>
 </a>
 
@@ -419,6 +419,49 @@ const categorias = [
   {id:"generadores", label:"Generadores"}
 ];
 
+/* ---------- REFERIDOS (?ref=) ---------- */
+// Guarda el código de vendedor de la URL (ej. ?ref=A-1) por 30 días,
+// aunque el cliente cierre el navegador y vuelva después.
+const REF_KEY = 'mhg_ref';
+const REF_DIAS = 30;
+
+function guardarRef(){
+  const params = new URLSearchParams(window.location.search);
+  const refUrl = params.get('ref');
+  if (refUrl){
+    localStorage.setItem(REF_KEY, JSON.stringify({
+      codigo: refUrl,
+      ts: Date.now()
+    }));
+  }
+}
+
+function obtenerRef(){
+  try{
+    const raw = localStorage.getItem(REF_KEY);
+    if (!raw) return null;
+    const data = JSON.parse(raw);
+    const venceMs = REF_DIAS * 24 * 60 * 60 * 1000;
+    if (Date.now() - data.ts > venceMs){
+      localStorage.removeItem(REF_KEY);
+      return null;
+    }
+    return data.codigo;
+  }catch(e){
+    return null;
+  }
+}
+
+function mensajeConRef(texto){
+  const ref = obtenerRef();
+  return ref ? `${texto} (Ref: ${ref})` : texto;
+}
+
+guardarRef();
+
+document.getElementById('fabWa').href =
+  'https://wa.me/50236389133?text=' + encodeURIComponent(mensajeConRef('Hola, quiero información sobre su catálogo'));
+
 const PLACEHOLDER = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
   <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140">
     <rect width="140" height="140" fill="none"/>
@@ -476,7 +519,7 @@ function renderLista(){
           <div class="price-row">${precioHtml}</div>
           <p class="det">${prod.det}</p>
           <p class="rec">Pago contra entrega · garantía y factura</p>
-          <a href="https://wa.me/50236389133?text=${encodeURIComponent('Hola, quiero información sobre: ' + prod.n)}" target="_blank" rel="noopener">
+          <a href="https://wa.me/50236389133?text=${encodeURIComponent(mensajeConRef('Hola, quiero información sobre: ' + prod.n))}" target="_blank" rel="noopener">
             <button class="btn-wa">
               <svg viewBox="0 0 32 32" fill="#fff"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.7 4.61 1.902 6.478L4 29l7.706-1.87A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3zm6.883 16.897c-.293.822-1.454 1.51-2.373 1.706-.63.132-1.454.238-4.226-.907-3.545-1.464-5.826-5.06-6.005-5.294-.172-.234-1.44-1.914-1.44-3.65 0-1.735.907-2.586 1.229-2.942.322-.356.702-.445.936-.445.234 0 .468.002.673.012.216.01.505-.082.79.603.293.703.994 2.437 1.081 2.615.088.178.147.386.03.62-.117.234-.176.379-.35.583-.176.203-.37.454-.528.61-.176.174-.36.362-.155.71.205.35.912 1.505 1.957 2.437 1.344 1.2 2.478 1.572 2.827 1.75.35.176.554.146.76-.088.205-.234.876-1.02 1.11-1.37.234-.35.468-.29.79-.174.322.117 2.05.966 2.4 1.142.35.176.585.264.673.41.088.146.088.847-.205 1.67z"/></svg>
               Consultar por WhatsApp
@@ -496,5 +539,4 @@ renderLista();
 </script>
 </body>
 </html>
-
 
